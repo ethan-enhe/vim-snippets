@@ -48,4 +48,17 @@ snippet tp "template <typename ..> (template)"
 template <typename ${1:_InputIter}>
 endsnippet
 
+snippet multi "cf multicase"
+${1:ll} t;
+${2:read(t);}
+while(t--){
+	${VISUAL}$0
+}
+endsnippet
+
+snippet fr "file io"
+freopen("${1:`!p snip.rv=fn.split('.')[0]`}.in","r",stdin);
+freopen("${1}.out","w",stdout);
+endsnippet
+
 # vim:ft=snippets:
