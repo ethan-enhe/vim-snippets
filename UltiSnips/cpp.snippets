@@ -28,13 +28,13 @@ endglobal
 #                            TextMate Snippets                            #
 ###########################################################################
 
-snippet for "general for loop (for)"
-for (${6:auto} ${1:i} = ${2:v.begin()}; `!p import re; snip.rv = re.split("[^\w]",t[1])[-1]` ${4:!=} ${3:`!p m = re.search(r'^(?:(.*)(\.|->)begin\(\)|((?:std|boost)::)?begin\((.*)\))$', t[2]); snip.rv = (((m.group(3) if m.group(3) else "") + "end(" + m.group(4) + ")") if m.group(4) else (m.group(1) + m.group(2) + "end()")) if m else ""`}; ${5:++`!p snip.rv = t[1].split(" ")[-1]`}) {
-	${VISUAL}$0
-}
-endsnippet
+# snippet for "general for loop (for)"
+# for (${6:auto} ${1:i} = ${2:v.begin()}; `!p import re; snip.rv = re.split("[^\w]",t[1])[-1]` ${4:!=} ${3:`!p m = re.search(r'^(?:(.*)(\.|->)begin\(\)|((?:std|boost)::)?begin\((.*)\))$', t[2]); snip.rv = (((m.group(3) if m.group(3) else "") + "end(" + m.group(4) + ")") if m.group(4) else (m.group(1) + m.group(2) + "end()")) if m else ""`}; ${5:++`!p snip.rv = t[1].split(" ")[-1]`}) {
+# 	${VISUAL}$0
+# }
+# endsnippet
 
-snippet beginend "$1.begin(), $1.end() (beginend)"
+snippet be "$1.begin(), $1.end() (beginend)"
 ${1:v}${1/^.*?(-)?(>)?$/(?2::(?1:>:.))/}begin(), $1${1/^.*?(-)?(>)?$/(?2::(?1:>:.))/}end()
 endsnippet
 
@@ -49,8 +49,8 @@ template <typename ${1:_InputIter}>
 endsnippet
 
 snippet multi "cf multicase"
-${1:ll} t;
-${2:scanf("%lld",&t);}
+${1:int} t;
+${2:scanf("%d",&t);}
 while(t--){
 	${VISUAL}$0
 }
@@ -60,5 +60,14 @@ snippet fr "file io"
 freopen("${1:`!p snip.rv=fn.split('.')[0]`}.in","r",stdin);
 freopen("${1}.out","w",stdout);
 endsnippet
+snippet ci "const int"
+const int ${1:MXN}=${2:1e6};
+endsnippet
+snippet forn "for n"
+for(int i=1;i<=${1:n};i++){
+	${VISUAL}$0
+}
+endsnippet
+
 
 # vim:ft=snippets:
