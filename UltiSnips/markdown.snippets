@@ -145,4 +145,18 @@ snippet "tb([1-9][1-9])" "Fancy table" br
 `!p snip.rv = match.group(1)`
 endsnippet
 
+snippet head "header"
+---
+layout:     post
+title:      `!p snip.rv=fn.split('.')[0].split('-')[3]`
+subtitle:   ${1}
+date:       `date +%Y-%m-%d`
+author:     ethan-zhou
+header-img: img/${2:post-bg-YesOrNo.jpg}
+catalog: true
+tags:${3}
+
+---
+$0
+endsnippet
 # vim:ft=snippets:
