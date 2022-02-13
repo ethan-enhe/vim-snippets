@@ -34,8 +34,8 @@ endglobal
 # }
 # endsnippet
 
-snippet be "$1.begin(), $1.end() (beginend)"
-${1:v}${1/^.*?(-)?(>)?$/(?2::(?1:>:.))/}begin(), $1${1/^.*?(-)?(>)?$/(?2::(?1:>:.))/}end()
+snippet be "$1.begin(), $1.end() (beginend)" i
+${1:v}.begin(), $1.end()
 endsnippet
 
 snippet ns "namespace .. (namespace)"
